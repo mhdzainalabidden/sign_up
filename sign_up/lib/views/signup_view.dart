@@ -18,16 +18,14 @@ class SignupView extends GetView<AuthController> {
             child: SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: 800.w),
-                child: IntrinsicHeight(
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      // If width is narrow, stack vertically
-                      bool isMobile = constraints.maxWidth < 600.w;
-                      return isMobile
-                          ? _buildMobileLayout()
-                          : _buildDesktopLayout();
-                    },
-                  ),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    // If width is narrow, stack vertically
+                    bool isMobile = constraints.maxWidth < 600.w;
+                    return isMobile
+                        ? _buildMobileLayout()
+                        : _buildDesktopLayout();
+                  },
                 ),
               ),
             ),
