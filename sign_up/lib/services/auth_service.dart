@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/user_model.dart';
+import '../models/signup_model.dart';
 
 class AuthService {
   static const String _baseUrl = 'https://api.escuelajs.co/api/v1';

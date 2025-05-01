@@ -4,7 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:sign_up/views/admin_dashboard_page.dart';
 import 'package:sign_up/views/kitchen_dashboard_page.dart';
 import 'package:sign_up/views/receptionist_dashboard_page.dart';
-import '../models/user_model.dart';
+import '../models/signup_model.dart';
 import '../services/auth_service.dart';
 
 class AuthController extends GetxController {
