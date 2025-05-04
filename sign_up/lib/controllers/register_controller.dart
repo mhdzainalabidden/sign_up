@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:sign_up/models/registrar_model.dart';
 import 'package:sign_up/routes/app_routes.dart';
 import 'package:sign_up/services/register_service.dart';
 
 class RegisterController extends GetxController {
   final RegisterService _service = RegisterService();
+  RegistrarModel? registerData;
+
   final box = GetStorage();
 
   // Form fields as Rx
@@ -60,16 +63,18 @@ class RegisterController extends GetxController {
     isLoading.value = true;
     try {
       // ignore: unused_local_variable
-      final res = await _service.register(
+      final response = await _service.register(
         name: name.value.trim(),
         email: email.value.trim(),
         password: password.value,
       );
+      registerData = RegistrarModel.fromJson(response);
+
       // On success, navigate to Admin Dashboard
       Get.offAllNamed(AppRoutes.ADMIN_DASH);
     } catch (e) {
       Get.snackbar(
-        'Registration Error',
+        registerData?.message ?? 'Error',
         e.toString().replaceAll('Exception: ', ''),
         snackPosition: SnackPosition.BOTTOM,
       );

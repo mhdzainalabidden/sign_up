@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:get_storage/get_storage.dart';
 import 'package:sign_up/models/registrar_model.dart';
+import 'package:sign_up/utils/constants.dart';
 
 class RegisterService {
-  final String _baseUrl = 'https://your-api.com'; // replace with your baseurl
   final http.Client _client;
+  static const String apiBaseUrl = AppConstants.apiBaseUrl; // Use your base URL
 
   RegisterService({http.Client? client}) : _client = client ?? http.Client();
 
@@ -14,7 +15,7 @@ class RegisterService {
     required String email,
     required String password,
   }) async {
-    final uri = Uri.parse('$_baseUrl/register');
+    final uri = Uri.parse('$apiBaseUrl/register');
     final response = await _client.post(
       uri,
       headers: {'Content-Type': 'application/json'},
