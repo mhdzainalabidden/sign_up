@@ -10,29 +10,30 @@ class RegisterService {
 
   RegisterService({http.Client? client}) : _client = client ?? http.Client();
 
-  Future<Map<String, dynamic>> register({
+  Future<RegistrarModel> register({
     required String name,
     required String email,
     required String password,
   }) async {
-    final uri = Uri.parse('$apiBaseUrl/register');
     final response = await _client.post(
-      uri,
+      Uri.parse('$apiBaseUrl/register'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'name': name, 'email': email, 'password': password}),
     );
 
-    final Map<String, dynamic> body = jsonDecode(response.body);
-    if (response.statusCode == 200) {
-      final result = RegistrarModel.fromJson(body);
+    final RegistrarModel body = jsonDecode(response.body);
 
+    // Check if the response is successful
+    // and handle the response accordingly
+    if (response.statusCode == 200) {
+      final result = RegistrarModel.fromJson(json.decode(response.body));
       // Persist token in local storage
       final box = GetStorage();
       await box.write('token', result.token);
       return body;
     } else {
       // Bubble up error message
-      final errorMsg = body['message'] ?? 'Registration failed';
+      final errorMsg = body.message;
       throw Exception(errorMsg);
     }
   }

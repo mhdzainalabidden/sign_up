@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Hotel Management',
             theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Arial'),
-            initialRoute: AppRoutes.REGISTER,
+            initialRoute: AppRoutes.LOGIN,
             getPages: AppPages.pages,
           ),
     );

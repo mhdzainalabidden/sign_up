@@ -68,7 +68,6 @@ class RegisterController extends GetxController {
         email: email.value.trim(),
         password: password.value,
       );
-      registerData = RegistrarModel.fromJson(response);
 
       // On success, navigate to Admin Dashboard
       Get.offAllNamed(AppRoutes.ADMIN_DASH);
