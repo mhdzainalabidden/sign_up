@@ -70,7 +70,7 @@ class LoginController extends GetxController {
           Get.offAllNamed(AppRoutes.RECEPTIONIST_DASH);
           break;
         case 'Restaurant_Supervisor':
-          Get.offAllNamed(AppRoutes.RESTURANT_SUPERVISER_DASH);
+          Get.offAllNamed(AppRoutes.GET_ORDERS_PAGE);
           break;
         default:
           Get.snackbar('Error', 'Unknown role');

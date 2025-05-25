@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sign_up/views/restaurantSupervisor/widget/sidebar_menu.dart';
+import 'package:sign_up/views/restaurantSupervisorView/sidebar_menu.dart';
 
 class MainLayout extends StatelessWidget {
   final Widget child;

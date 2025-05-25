@@ -17,14 +17,14 @@ class Sidebar extends StatelessWidget {
         color: Colors.blueGrey.shade900,
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 6)],
       ),
-      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 12.w),
+      padding: EdgeInsets.only(left: 8.w, right: 16.w, top: 45.h, bottom: 32.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Restaurant Supervisor',
             style: TextStyle(
-              fontSize: 11.sp,
+              fontSize: 7.sp,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -44,6 +44,18 @@ class Sidebar extends StatelessWidget {
             icon: Icons.archive_rounded,
             route: AppRoutes.GET_ORDERS_ARCHIVE,
             isSelected: currentRoute == AppRoutes.GET_ORDERS_ARCHIVE,
+          ),
+          _SidebarItem(
+            label: 'invoices',
+            icon: Icons.list_alt_rounded,
+            route: AppRoutes.GET_ALL_INVOICES,
+            isSelected: currentRoute == AppRoutes.GET_ALL_INVOICES,
+          ),
+          _SidebarItem(
+            label: 'Menu Items',
+            icon: Icons.restaurant_menu_rounded,
+            route: AppRoutes.GET_ALL_MENU_ITEMS,
+            isSelected: currentRoute == AppRoutes.GET_ALL_MENU_ITEMS,
           ),
 
           const Spacer(),
@@ -94,8 +106,8 @@ class _SidebarItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             color:
                 isSelected
-                    ? Colors.teal.shade700.withOpacity(0.6)
-                    : Colors.blueGrey.shade800.withOpacity(0.3),
+                    ? Colors.teal.shade700.withValues(alpha: 0.6)
+                    : Colors.blueGrey.shade800.withValues(alpha: 0.3),
           ),
           child: Row(
             children: [

@@ -14,22 +14,14 @@ class OrderService {
   final String rejectOrderEndpoint = AppConstants.rejectOrderEndpoint;
 
   Map<String, String> get _headers {
-    // final token = box.read<String>('token') ?? '';
-    final token =
-        '5|ZeAKf2GgyZyDDfJoMTecDYG0uN16469uH5ptURDo'; // Replace with actual token
+    final token = box.read<String>('token') ?? '';
+    // '5|ZeAKf2GgyZyDDfJoMTecDYG0uN16469uH5ptURDo';
+
     return {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',
     };
   }
-
-  // Future<OrderModel> getAllOrders() async {
-  //   final res = await http.get(
-  //     Uri.parse('$_baseUrl/getAllOrders'),
-  //     headers: _headers,
-  //   );
-  //   return OrderModel.fromJson(json.decode(res.body));
-  // }
 
   Future<OrderModel> getAllOrders() async {
     final uri = Uri.parse('$baseUrl$getAllOrdersEndpoint');

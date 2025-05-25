@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sign_up/views/restaurantSupervisor/main_layout.dart';
-import 'package:sign_up/views/restaurantSupervisor/widget/order_card.dart';
-import 'package:sign_up/views/restaurantSupervisor/widget/orders_filter.dart';
+import 'package:sign_up/views/restaurantSupervisorView/main_layout.dart';
+import 'package:sign_up/views/restaurantSupervisorView/orders_componant/order_card.dart';
+import 'package:sign_up/views/restaurantSupervisorView/orders_componant/orders_filter.dart';
 import '../../controllers/orders_controller.dart';
 
 class OrdersPage extends GetView<OrdersController> {

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sign_up/controllers/orders_archive_controllers.dart';
 import 'package:sign_up/models/order_model.dart';
-import 'package:sign_up/views/restaurantSupervisor/main_layout.dart';
+import 'package:sign_up/views/restaurantSupervisorView/main_layout.dart';
 
 class OrdersArchivePage extends StatelessWidget {
   final OrdersArchiveContrller ctrl = Get.put(OrdersArchiveContrller());
@@ -56,6 +56,7 @@ class OrdersArchivePage extends StatelessWidget {
       return InkWell(
         onTap: () async {
           final picked = await showDatePicker(
+            // ignore: deprecated_member_use
             barrierColor: Colors.blueAccent.withOpacity(0.5),
             context: Get.context!,
             initialDate: DateTime.now(),
@@ -138,6 +139,7 @@ class OrdersArchivePage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(
+                  // ignore: deprecated_member_use
                   color: badgeColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(8.r),
                 ),

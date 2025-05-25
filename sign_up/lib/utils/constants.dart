@@ -5,14 +5,20 @@ import 'package:flutter/material.dart';
 class AppConstants {
   //–– API
   static const String apiBaseUrl = 'http://localhost:8000/api/';
+
   static const String getAllOrdersEndpoint = 'getAllOrders';
   static const String getOrdersByStatusEndpoint = 'restaurant-orders/status/';
   static const String approveOrderEndpoint = 'approveOrderBYSupervisor';
   static const String rejectOrderEndpoint = 'rejectOrderBYSupervisor';
   static const String getOrdersByDateRangeEndpoint = 'getOrdersByDateRange';
 
-  static const String loginEndpoint = 'auth/login';
-  static const String userProfileEndpoint = 'user/profile';
+  static const String getAllInvoicesEndpoint = 'getAllInvoices';
+
+  static const String getAllMenuItemsEndpoint = 'getListMenuItems';
+  static const String addMenuItemEndpoint = 'AddMenuItem';
+  static const String deleteMenuItemEndpoint = 'DeleteMenuItem';
+
+  static const String loginEndpoint = 'login';
 
   //–– UI: Dimensions
   static const double paddingSmall = 8.0;

@@ -3,19 +3,22 @@
 import 'package:sign_up/models/order_model.dart';
 
 import 'dart:convert';
-// import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:sign_up/utils/constants.dart';
+import 'package:get_storage/get_storage.dart';
+
+final box = GetStorage();
 
 class OrderArchiveService {
   final String baseUrl = AppConstants.apiBaseUrl;
 
   final String getOrdersByDateRangeEndpoint =
       AppConstants.getOrdersByDateRangeEndpoint;
+
   Map<String, String> get _headers {
-    // final token = box.read<String>('token') ?? '';
-    final token =
-        '5|ZeAKf2GgyZyDDfJoMTecDYG0uN16469uH5ptURDo'; // Replace with actual token
+    final token = box.read<String>('token') ?? '';
+    // '5|ZeAKf2GgyZyDDfJoMTecDYG0uN16469uH5ptURDo';
+
     return {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',

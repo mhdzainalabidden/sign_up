@@ -11,4 +11,7 @@ abstract class AppRoutes {
   static const GET_ORDERS_PAGE = '/orders';
   static const Restaurant_Menu_Dashboard = '/restaurant_menu_dashboard';
   static const GET_ORDERS_ARCHIVE = '/Orders_Archive_Page';
+  static const KITCHEN_DASHBOARD = '/kitchen_dashboard';
+  static const GET_ALL_INVOICES = '/get_all_invoices';
+  static const GET_ALL_MENU_ITEMS = '/get_all_menu_items';
 }
